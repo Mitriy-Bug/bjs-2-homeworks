@@ -11,18 +11,14 @@ Student.prototype.setSubject = function (subjectName) {
 
 Student.prototype.addMarks = function (...marksToAdd) {
 	if (this.marks) {
-	  if (marksToAdd.length) {
 	    this.marks.push(...marksToAdd);
-	  }
 	}
 }
 
 Student.prototype.getAverage = function () {
-	if (this.marks) {
-	  if (this.marks.length) {
+	if (this.marks || this.marks.length) {
 	    const initialValue = 0;
 	  	return this.marks.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue) / this.marks.length;
-	  }
 	}
     return 0;
 }
